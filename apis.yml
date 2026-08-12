@@ -1,7 +1,17 @@
 aid: dragonfly-therapeutics
 name: Dragonfly Therapeutics
-description: 'Dragonfly Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: 'Dragonfly Therapeutics is a clinical-stage biotechnology company based in Waltham,
+  Massachusetts, founded in 2016 by Tyler Jacks, Bill Haney and David Raulet to develop natural
+  killer (NK) cell-based immunotherapies. Its proprietary TriNKET (Tri-specific NK cell Engager
+  Therapy) and cytokine engager platforms produce molecules that bind both a tumor or disease
+  antigen and an NK cell activating receptor, recruiting innate and adaptive immunity against
+  cancer, autoimmune disease, fibrosis and neuro-inflammation. Lead clinical candidate DF1001
+  targets HER2 in advanced solid tumors, and the platform is licensed under multi-target
+  collaborations with AbbVie, Bristol Myers Squibb, Merck and Gilead. Dragonfly is a therapeutics
+  developer rather than a software company: it publishes no developer program, no public API,
+  no SDKs and no machine-readable API contract. The only agent-readable surfaces on its own host
+  are the llms.txt and Model Context Protocol endpoint automatically provisioned by its Wix
+  website platform.'
 url: https://raw.githubusercontent.com/api-evangelist/dragonfly-therapeutics/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,7 +22,38 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
-apis: []
+- Biotechnology
+- Pharmaceuticals
+- Immunotherapy
+- Oncology
+- Life Sciences
+- Clinical Stage
+- Drug Discovery
+- Healthcare
+apis:
+- name: Dragonfly Therapeutics Site MCP
+  description: 'Model Context Protocol endpoint served from the Dragonfly Therapeutics website
+    host. This is a platform-provided surface automatically provisioned by Wix for every site it
+    builds — not a first-party Dragonfly Therapeutics product API. It answers an unauthenticated
+    JSON-RPC 2.0 tools/list with nine tools that let an agent read business details, search site
+    content, obtain a visitor token and call Wix site APIs on a visitor''s behalf. Verified live
+    on 2026-08-12: tools/list returned HTTP 200 with real inputSchema per tool, and a
+    GetBusinessDetails call returned the site''s business record.'
+  humanURL: https://www.dragonflytx.com/
+  baseURL: https://www.dragonflytx.com/_api/mcp
+  tags:
+  - MCP
+  - Agent
+  - Website
+  properties:
+  - type: MCPServer
+    url: mcp/dragonfly-therapeutics-mcp.yml
+  - type: Authentication
+    url: authentication/dragonfly-therapeutics-authentication.yml
+  - type: RateLimits
+    url: rate-limits/dragonfly-therapeutics-rate-limits.yml
+  - type: Plans
+    url: plans/dragonfly-therapeutics-plans-pricing.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +61,54 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://www.dragonflytx.com/
+- type: Blog
+  url: https://www.dragonflytx.com/blog
+- type: BlogRSS
+  url: https://www.dragonflytx.com/blog-feed.xml
+- type: News
+  url: https://www.dragonflytx.com/news
+- type: PrivacyPolicy
+  url: https://www.dragonflytx.com/_files/ugd/cb0357_e5861f3f611f4e3091162162753c2083.pdf
+- type: LinkedIn
+  url: https://www.linkedin.com/company/dragonfly-therapeutics-inc.
+- type: Profile
+  name: Hiive secondary-market listing
   url: https://www.hiive.com/securities/dragonfly-therapeutics-stock
+- type: LLMsTxt
+  url: llms/dragonfly-therapeutics-llms.txt
+- type: MCPServer
+  url: mcp/dragonfly-therapeutics-mcp.yml
+- type: Authentication
+  url: authentication/dragonfly-therapeutics-authentication.yml
+- type: Conformance
+  url: conformance/dragonfly-therapeutics-conformance.yml
+- type: DomainSecurity
+  url: security/dragonfly-therapeutics-domain-security.yml
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Dragonfly Therapeutics is a clinical-stage NK-cell immunotherapy developer whose product is a
+    drug pipeline, not software; the whole site is ten Wix pages with no developer, API or docs
+    route, and the only machine-readable surfaces (llms.txt and a /_api/mcp endpoint) are
+    boilerplate auto-provisioned by Wix rather than anything the company authored.
+  evidence:
+  - url: https://www.dragonflytx.com/developers
+    status: 404
+  - url: https://www.dragonflytx.com/api-docs
+    status: 404
+  - url: https://www.dragonflytx.com/openapi.json
+    status: 400
+  - url: https://www.dragonflytx.com/.well-known/agent-card.json
+    status: 400
+  - url: https://www.dragonflytx.com/llms.txt
+    status: 200
+  - url: https://www.dragonflytx.com/_api/mcp
+    status: 200
+  checked: '2026-08-12'

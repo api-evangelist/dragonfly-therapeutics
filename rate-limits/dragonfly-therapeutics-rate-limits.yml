@@ -1,0 +1,34 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.dragonflytx.com/_api/mcp
+limit_count: 0
+limits: []
+note: >-
+  No rate limits are documented anywhere on the Dragonfly Therapeutics site, and none are
+  signalled at runtime. The live 200 response from the Site MCP endpoint was inspected header by
+  header: it carries no X-RateLimit-*, no RateLimit-*, no Retry-After and no quota field in the
+  JSON-RPC envelope. There is no developer documentation to search, so this is an observed
+  absence rather than an undocumented-but-enforced limit — a consumer gets no runtime signal
+  either way.
+observed_response_headers:
+- content-type
+- mcp-session-id
+- etag
+- pragma
+- cache-control
+- x-wix-request-id
+- set-cookie
+- x-robots-tag
+- server
+- x-content-type-options
+- strict-transport-security
+- vary
+rate_limit_headers_present: false
+retry_after_present: false
+exhaustion_status_code: null
+x-evidence:
+- url: https://www.dragonflytx.com/_api/mcp
+  status: 200
+  method: POST
+  fetched: '2026-08-12'
+  note: Headers read directly from the live tools/list response.

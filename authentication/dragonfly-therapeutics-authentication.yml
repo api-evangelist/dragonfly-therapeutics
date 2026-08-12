@@ -1,0 +1,53 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.dragonflytx.com/_api/mcp
+docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+note: >-
+  Derived from live observation of the only callable surface this company serves — the
+  Wix-provisioned Site MCP endpoint. There is no OpenAPI, no securitySchemes block and no
+  first-party auth documentation to read, so derive-authentication.py produced nothing; this
+  profile records what the endpoint actually did when probed anonymously on 2026-08-12.
+summary:
+  types: [none, bearer-visitor-token]
+  api_key_in: []
+  oauth2_flows: []
+  oauth_discovery: absent
+schemes:
+- name: anonymous
+  type: none
+  applies_to:
+  - tools/list
+  - GetBusinessDetails
+  - SearchInSite
+  - SearchSiteApiDocs
+  - GenerateVisitorToken
+  evidence: >-
+    POST tools/list and POST tools/call GetBusinessDetails both returned HTTP 200 with no
+    credential of any kind supplied.
+- name: visitorToken
+  type: http
+  scheme: bearer
+  applies_to:
+  - CallWixSiteAPI
+  - ExecuteWixAPI
+  issuance: >-
+    Obtained anonymously from the GenerateVisitorToken tool on the same endpoint; no account,
+    registration or API key is required.
+  evidence: >-
+    Both tools declare a required visitorToken property in the inputSchema returned by
+    tools/list, and the llms.txt states GenerateVisitorToken must be called first.
+discovery:
+- path: /.well-known/oauth-authorization-server
+  status: 400
+  present: false
+- path: /.well-known/oauth-protected-resource
+  status: 400
+  present: false
+- path: /.well-known/openid-configuration
+  status: 400
+  present: false
+scopes: []
+x-evidence:
+  fetched: '2026-08-12'
+  url: https://www.dragonflytx.com/_api/mcp
+  http_status: 200

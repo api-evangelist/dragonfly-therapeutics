@@ -1,0 +1,19 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.dragonflytx.com/
+plan_count: 0
+plans: []
+note: >-
+  Dragonfly Therapeutics publishes no API plans, tiers or pricing of any kind. It is a
+  clinical-stage biotechnology company whose commercial model is drug licensing and milestone
+  payments under collaborations with AbbVie, Bristol Myers Squibb, Merck and Gilead — not API
+  consumption. The full ten-page sitemap was walked and contains no pricing, plans, developer or
+  signup route. The one callable surface, the Wix-provisioned Site MCP at /_api/mcp, is provided
+  free and unauthenticated as part of the website platform and carries no metered pricing.
+x-evidence:
+- url: https://www.dragonflytx.com/pages-sitemap.xml
+  status: 200
+  note: 10 URLs; about, pipeline, our-pipeline, news, blog and four poster pages. No pricing page.
+- url: https://www.dragonflytx.com/_api/mcp
+  status: 200
+  note: Answers anonymously with no plan, quota or billing signal.
