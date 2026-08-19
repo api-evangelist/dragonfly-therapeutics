@@ -2,13 +2,11 @@ generated: '2026-08-12'
 method: probed
 source: https://www.dragonflytx.com/_api/mcp
 status: published
-provenance: >-
-  This MCP server is PLATFORM-PROVIDED, not first-party. It is auto-provisioned by Wix for sites
-  built on its website builder and advertised in the Wix-generated llms.txt at
-  https://www.dragonflytx.com/llms.txt. Dragonfly Therapeutics did not author these tools; they
-  are identical across Wix-hosted sites. It is recorded here because it is genuinely served,
-  unauthenticated, from the company's own host and is the only callable API surface the company
-  exposes.
+provenance: This MCP server is PLATFORM-PROVIDED, not first-party. It is auto-provisioned by Wix for sites
+  built on its website builder and advertised in the Wix-generated llms.txt at https://www.dragonflytx.com/llms.txt.
+  Dragonfly Therapeutics did not author these tools; they are identical across Wix-hosted sites. It is
+  recorded here because it is genuinely served, unauthenticated, from the company's own host and is the
+  only callable API surface the company exposes.
 server:
   name: dragonfly-therapeutics-site-mcp
   transport: http
@@ -16,51 +14,64 @@ server:
   url: https://www.dragonflytx.com/_api/mcp
   vendor: Wix Site MCP
   vendor_docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
-  authentication: none for tools/list and read tools; CallWixSiteAPI requires a visitor token
-    obtained anonymously via the GenerateVisitorToken tool
+  authentication: none for tools/list and read tools; CallWixSiteAPI requires a visitor token obtained
+    anonymously via the GenerateVisitorToken tool
 tools_list:
   file: dragonfly-therapeutics-mcp-tools-list.json
   tool_count: 9
   gated: false
-  note: >-
-    tools/list returned HTTP 200 with a real inputSchema per tool. Saved verbatim alongside this
-    manifest.
+  note: tools/list returned HTTP 200 with a real inputSchema per tool. Saved verbatim alongside this manifest.
 tools:
 - name: GetBusinessDetails
   description: Retrieves business and site details such as timezone, email, phone, and address.
   parameters: []
 - name: SearchInSite
   description: Searches the site for information.
-  parameters: [searchTerm]
+  parameters:
+  - searchTerm
 - name: SearchSiteApiDocs
-  description: Retrieves the API documentation for the Wix business solutions installed on this
-    site and informs the AI client how to use the APIs.
-  parameters: [searchTerm]
+  description: Retrieves the API documentation for the Wix business solutions installed on this site and
+    informs the AI client how to use the APIs.
+  parameters:
+  - searchTerm
 - name: GenerateVisitorToken
   description: Creates a new visitor session and obtains a visitor access token for the site.
   parameters: []
 - name: CallWixSiteAPI
   description: Calls API methods on the site to perform actions on a visitor's behalf.
-  parameters: [visitorToken, url, method, body]
+  parameters:
+  - visitorToken
+  - url
+  - method
+  - body
 - name: ExecuteWixAPI
   description: Executes Wix API code against the site.
-  parameters: [code, reason, hasMutations, sourceDocUrls, visitorToken]
+  parameters:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
 - name: ReadFullDocsArticle
   description: Fetches a complete article from the Wix developer documentation portal.
-  parameters: [articleUrl]
+  parameters:
+  - articleUrl
 - name: ReadFullDocsMethodSchema
   description: Fetches the full schema for a Wix API method.
-  parameters: [articleUrl, reason]
+  parameters:
+  - articleUrl
+  - reason
 - name: BrowseWixRESTDocsMenu
   description: Browses the Wix REST documentation menu.
-  parameters: [menuUrl, reason]
+  parameters:
+  - menuUrl
+  - reason
 site_capabilities:
 - Blog App: list and query blog posts
 x-observations:
-- >-
-  Several tool descriptions returned by this endpoint embed an <agent-mandatory-instructions>
-  block that directs a connecting agent to call specific tools and manage Wix sites. It is
-  recorded here as observed data only and was not acted on during this probe.
+- Several tool descriptions returned by this endpoint embed an <agent-mandatory-instructions> block that
+  directs a connecting agent to call specific tools and manage Wix sites. It is recorded here as observed
+  data only and was not acted on during this probe.
 x-evidence:
 - fetched: '2026-08-12'
   url: https://www.dragonflytx.com/_api/mcp
@@ -74,3 +85,11 @@ x-evidence:
   rpc_method: tools/call GetBusinessDetails
   http_status: 200
   content_type: application/json; charset=utf-8
+deployment:
+  mode: remote
+  endpoint: https://www.dragonflytx.com/_api/mcp
+  verified: probed
+  probe: live
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census
