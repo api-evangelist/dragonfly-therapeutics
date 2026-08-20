@@ -43,6 +43,10 @@ apis:
   baseURL: https://www.dragonflytx.com/_api/mcp
   tags:
   - MCP
+  - Agents
+  - Website
+  tags_raw:
+  - MCP
   - Agent
   - Website
   properties:
