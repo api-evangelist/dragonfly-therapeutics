@@ -3,33 +3,10 @@ method: probed
 source: https://www.dragonflytx.com/
 host: https://www.dragonflytx.com
 result: none
-note: >-
-  Every /.well-known/ path probed on the only host this company operates returned a Wix error
-  page, not a document. Wix answers 400 (not 404) for unknown /.well-known/* paths with an HTML
-  body. Recorded as a verified absence — NO WellKnown, SecurityTxt or APICatalog pointer is
-  emitted in apis.yml, because nothing here is a served document.
-documents:
-- path: /.well-known/security.txt
-  status: 400
-  document: false
-- path: /.well-known/openid-configuration
-  status: 400
-  document: false
-- path: /.well-known/oauth-authorization-server
-  status: 400
-  document: false
-- path: /.well-known/api-catalog
-  status: 400
-  document: false
-- path: /.well-known/ai-plugin.json
-  status: 400
-  document: false
-- path: /.well-known/agent-card.json
-  status: 400
-  document: false
-- path: /.well-known/agent.json
-  status: 400
-  document: false
+note: Every /.well-known/ path probed on the only host this company operates returned a Wix error page,
+  not a document. Wix answers 400 (not 404) for unknown /.well-known/* paths with an HTML body. Recorded
+  as a verified absence — NO WellKnown, SecurityTxt or APICatalog pointer is emitted in apis.yml, because
+  nothing here is a served document.
 adjacent_root_documents:
 - path: /llms.txt
   status: 200
@@ -46,7 +23,30 @@ adjacent_root_documents:
   note: Sitemap index -> pages-sitemap.xml, 10 URLs, lastmod 2026-05-19.
 x-evidence:
   fetched: '2026-08-12'
-  probed_hosts: [www.dragonflytx.com, dragonflytx.com]
-  apex_note: >-
-    dragonflytx.com 301-redirects every /.well-known/ path to www.dragonflytx.com, which then
+  probed_hosts:
+  - www.dragonflytx.com
+  - dragonflytx.com
+  apex_note: dragonflytx.com 301-redirects every /.well-known/ path to www.dragonflytx.com, which then
     returns 400. No document at either host.
+hosts:
+- host: https://www.dragonflytx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+  - path: /.well-known/openid-configuration
+    status: 400
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+  - path: /.well-known/api-catalog
+    status: 400
+  - path: /.well-known/ai-plugin.json
+    status: 400
+  - path: /.well-known/agent-card.json
+    status: 400
+  - path: /.well-known/agent.json
+    status: 400
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
