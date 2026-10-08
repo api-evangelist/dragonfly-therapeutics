@@ -93,6 +93,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/dragonfly-therapeutics-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/dragonfly-therapeutics-rate-limits.yml
 - type: Website
   url: https://www.dragonflytx.com/
 - type: Blog
