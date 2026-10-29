@@ -64,5 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Dragonfly Therapeutics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/dragonfly-therapeutics-stock
+Dragonfly Therapeutics is a clinical-stage biotechnology company based in Waltham, Massachusetts, founded in 2016 by Tyler Jacks, Bill Haney and David Raulet to develop natural killer (NK) cell-based immunotherapies. Its proprietary TriNKET (Tri-specific NK cell Engager Therapy) and cytokine engager platforms produce molecules that bind both a tumor or disease antigen and an NK cell activating receptor, recruiting innate and adaptive immunity against cancer, autoimmune disease, fibrosis and neuro-inflammation. Lead clinical candidate DF1001 targets HER2 in advanced solid tumors, and the platform is licensed under multi-target collaborations with AbbVie, Bristol Myers Squibb, Merck and Gilead. Dragonfly is a therapeutics developer rather than a software company: it publishes no developer program, no public API, no SDKs and no machine-readable API contract. The only agent-readable surfaces on its own host are the llms.txt and Model Context Protocol endpoint automatically provisioned by its Wix website platform.
+
+**Areas:** Company · Biotechnology · Pharmaceuticals · Immunotherapy · Oncology · Life Sciences · Clinical Stage · Drug Discovery · Healthcare
+
+## Dragonfly Therapeutics on APIs.io
+
+Everything profiled for Dragonfly Therapeutics is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/dragonfly-therapeutics/](https://apis.io/providers/dragonfly-therapeutics/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Dragonfly Therapeutics Site MCP](https://apis.io/apis/dragonfly-therapeutics/dragonfly-therapeutics-site-mcp/) — Model Context Protocol endpoint served from the Dragonfly Therapeutics website host. This is a platform-provided surface automatically provisioned by Wix…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [dragonfly-therapeutics-site-mcp](https://apis.io/servers/dragonfly-therapeutics/dragonfly-therapeutics-site-mcp/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Dragonfly Therapeutics Authentication](https://apis.io/security/dragonfly-therapeutics/dragonfly-therapeutics-authentication/)
+- [Dragonfly Therapeutics Domain Security](https://apis.io/security/dragonfly-therapeutics/dragonfly-therapeutics-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Dragonfly Therapeutics Plans Pricing](https://apis.io/plans/dragonfly-therapeutics/dragonfly-therapeutics-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Dragonfly Therapeutics Rate Limits](https://apis.io/rate-limits/dragonfly-therapeutics/dragonfly-therapeutics-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.dragonflytx.com/)
+- [Blog](https://www.dragonflytx.com/blog)
+- [Privacy policy](https://www.dragonflytx.com/_files/ugd/cb0357_e5861f3f611f4e3091162162753c2083.pdf)
+
+## API Evangelist rating
+
+**Kin Score 15.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 72.5 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 10.5 |
+
+**Agent readiness 7.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/dragonfly-therapeutics/](https://apis.io/providers/dragonfly-therapeutics/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Dragonfly Therapeutics: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/dragonfly-therapeutics/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
